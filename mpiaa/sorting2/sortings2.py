@@ -45,7 +45,9 @@ def bucket_sort(items, get_key=lambda item: item):
     def key_to_bucket(key):
         return key
 
-    buckets = [[]]*num_of_buckets
+    buckets = []
+    for i in range(num_of_buckets):
+        buckets.append([])
     for item in items:
         buckets[key_to_bucket(get_key(item))].append(item)
 
